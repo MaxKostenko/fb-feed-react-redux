@@ -1,21 +1,28 @@
-import * as AuthActionsTypes from '../constants/AuthActionTypes';
+import * as AuthActionsTypes from "../constants/AuthActionTypes";
 
 export function initAuth() {
-  return { type: AuthActionsTypes.INIT_AUTH };
+	return {type: AuthActionsTypes.INIT_AUTH};
 }
 
 export function login() {
-  return { type: AuthActionsTypes.LOGIN };
+	return {type: AuthActionsTypes.LOGIN};
 }
 
 export function logout() {
-  return { type: AuthActionsTypes.LOGOUT };
+	return {type: AuthActionsTypes.LOGOUT};
 }
 
 export function setAuth(response) {
-  return {
-      type: AuthActionsTypes.SET_AUTH,
-      status: response.status,
-      data: response.authResponse
-  };
+	return {
+		type: AuthActionsTypes.SET_AUTH,
+		status: response.status,
+		data: response.authResponse
+	};
+}
+
+export function initAccount(onReady) {
+	return {
+		type: AuthActionsTypes.INIT_ACCOUNT_PAGE,
+		onReady
+	};
 }

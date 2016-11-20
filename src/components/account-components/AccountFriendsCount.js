@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
 export default class AccountFriendsCount extends React.Component {
 
 	static propTypes = {
 		context: React.PropTypes.object,
 	};
-	
+
 	get friendsCount() {
-		const isValid = this.props.context && 
-			this.props.context.mutual_friends && 
-			this.props.context.mutual_friends.summary && 
+		const isValid = this.props.context &&
+			this.props.context.mutual_friends &&
+			this.props.context.mutual_friends.summary &&
 			this.props.context.mutual_friends.summary.total_count;
-		if( isValid ) {
+		if (isValid) {
 			return this.props.context.mutual_friends.summary.total_count
 		}
 		return 0;

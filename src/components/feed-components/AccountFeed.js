@@ -1,5 +1,4 @@
-import React from 'react';
-import FeedItem from './FeedItem';
+import React from "react";
 
 
 export default class AccountFeed extends React.Component {
@@ -12,9 +11,9 @@ export default class AccountFeed extends React.Component {
 	render() {
 		console.log('Feed render');
 
-  		const items = [];
+		const items = [];
 		this.props.feed.map((item) => items.push(this.props.children(item)));
-		if( !items.length ) return null;
+		if (!items.length) return null;
 		return <div className="ui text container main">{items}</div>
 	}
 }

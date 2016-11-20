@@ -1,23 +1,23 @@
-import React from 'react';
-import ProfilePicture from '../ui-components/ProfilePicture';
-import './AccountNavBar.css';
-import Logout from './AccountLogoutButton';
+import React from "react";
+import ProfilePicture from "../ui-components/ProfilePicture";
+import "./AccountNavBar.css";
+import Logout from "./AccountLogoutButton";
 
 const SHOW_AFTER_TOP_OFFSET = 200;
 
 export default class AccountNavBar extends React.Component {
-	
+
 	static propTypes = {
-        userId: React.PropTypes.string.isRequired,
-        handleLogOut: React.PropTypes.func.isRequired
-    };
-	
+		userId: React.PropTypes.string.isRequired,
+		handleLogOut: React.PropTypes.func.isRequired
+	};
+
 	isHidden = true;
 
 	componentWillMount() {
 		this.scrollEvent = this.handleScroll.bind(this);
 	}
-	
+
 	componentDidMount() {
 		window.addEventListener('scroll', this.scrollEvent);
 	}
@@ -27,14 +27,14 @@ export default class AccountNavBar extends React.Component {
 	}
 
 	handleScroll(event) {
-		
-		if( window.pageYOffset > SHOW_AFTER_TOP_OFFSET ) {
-			if( this.isHidden ) {
+
+		if (window.pageYOffset > SHOW_AFTER_TOP_OFFSET) {
+			if (this.isHidden) {
 				this.refs.root.classList.remove('hidden');
 			}
 			this.isHidden = false;
 		} else {
-			if( !this.isHidden ) {
+			if (!this.isHidden) {
 				this.refs.root.classList.add('hidden');
 			}
 			this.isHidden = true;
@@ -46,7 +46,7 @@ export default class AccountNavBar extends React.Component {
 			<div className="ui text container">
 				<div className="left menu">
 					<div className="item">
-						<ProfilePicture user={this.props.userId} size="tiny" /> 
+						<ProfilePicture user={this.props.userId} size="tiny"/>
 					</div>
 				</div>
 				<div className="right menu">

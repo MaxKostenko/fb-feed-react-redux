@@ -1,8 +1,8 @@
-import * as Actions from '../constants/PostsActionTypes';
+import * as Actions from "../constants/PostsActionTypes";
 
 const initialState = {
-    list: [],
-    next: []
+	list: [],
+	next: []
 };
 
 
@@ -12,10 +12,10 @@ export default function posts(state = initialState, action) {
 			return {
 				...state,
 				...{
-					list: action.data
+					list: action.data.data
 				}
 			};
-        default:
-            return state;
+		default:
+			return state;
 	}
 }

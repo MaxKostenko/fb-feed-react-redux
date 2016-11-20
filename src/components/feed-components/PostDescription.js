@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default class PostDescription extends React.Component {
 
@@ -9,7 +9,7 @@ export default class PostDescription extends React.Component {
 	render() {
 
 		const item = this.props.data;
-		if( !item.description )
+		if (!item.description)
 			return null;
 
 		return <div className="content">

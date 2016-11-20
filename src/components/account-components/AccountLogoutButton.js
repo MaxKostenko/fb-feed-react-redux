@@ -1,6 +1,6 @@
 /* global FB */
-import React from 'react';
-import Button from '../ui-components/Button';
+import React from "react";
+import Button from "../ui-components/Button";
 
 export default class AccountLogoutButton extends React.Component {
 
@@ -12,7 +12,7 @@ export default class AccountLogoutButton extends React.Component {
 		this.setState({isLoading: true});
 		this.props.handleLogOut();
 	}
-	
+
 	render() {
 		return <Button loading={this.state.isLoading} actionClick={this.actionClick.bind(this)}>Log out</Button>;
 	}

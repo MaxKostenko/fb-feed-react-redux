@@ -1,8 +1,8 @@
 nav {
-	height: 90px;
-	padding: 5px;
+    height: 90px;
+    padding: 5px;
 }
 
 .ui.fixed.hidden.menu {
-	display: none;
+    display: none;
 }
